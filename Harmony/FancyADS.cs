@@ -78,7 +78,7 @@ public class FancyADS_Update
 
         // TODO find a better way to debug with some sort of flag
         //Debug.Log($"zoom: {fancyADS.zoom} baseFOV: {fancyADS.baseFOV} currentFOV: {fancyADS.currentFOV} aim: {___aimingSensitivity} ads: {fancyADS.ads} def: {___defaultSensitivity}");
-        ___aimingSensitivity = (fancyADS.ads * ___defaultSensitivity) / (float)Math.Pow(fancyADS.zoom, 2.0);
+        ___aimingSensitivity = ___defaultSensitivity / (float)Math.Pow(fancyADS.zoom, 1/fancyADS.ads);
     }
 
     static void Postfix(float __state, ref float ___aimingSensitivity)
